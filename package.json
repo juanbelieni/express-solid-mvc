@@ -1,13 +1,11 @@
 {
-  "name": "node-typescript-boilerplate",
-  "version": "1.0.1",
-  "description": "Node template for TypeScript projects",
+  "name": "express-solid-mvc",
+  "description": "Implementation of SOLID and MVC with Express",
   "main": "dist/index.js",
   "repository": "https://github.com/juanbelieni/node-typescript-boilerplate",
   "author": {
     "name": "Juan Belieni",
-    "email": "juanbelieni@gmail.com",
-    "url": "https://juanbelieni.codes"
+    "email": "juanbelieni@gmail.com"
   },
   "license": "MIT",
   "scripts": {
