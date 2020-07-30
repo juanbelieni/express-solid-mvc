@@ -6,7 +6,7 @@ import ICreateUserDTO from './ICreateUserDTO';
 export default class CreateUserUseCase {
   constructor(private userModel: IUserModel) {}
 
-  async create(data: ICreateUserDTO) {
+  async create(data: ICreateUserDTO): Promise<void> {
     const userAlreadyExists = await this.userModel.findByEmail(data.email);
 
     if (userAlreadyExists) {

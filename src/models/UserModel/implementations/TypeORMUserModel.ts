@@ -12,4 +12,8 @@ export default class TypeORMUserModel implements IUserModel {
   async save(user: User): Promise<void> {
     await getRepository(User).save(user);
   }
+
+  async truncate(): Promise<void> {
+    await getRepository(User).delete({});
+  }
 }

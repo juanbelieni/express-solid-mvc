@@ -5,7 +5,7 @@ import ILoginDTO from './ILoginDTO';
 export default class LoginUseCase {
   constructor(private userModel: IUserModel) {}
 
-  async login(data: ILoginDTO) {
+  async login(data: ILoginDTO): Promise<string> {
     const user = await this.userModel.findByEmail(data.email);
 
     if (!user) {
@@ -15,5 +15,7 @@ export default class LoginUseCase {
     if (user.hashedPassword !== getHashedPassword(data.password)) {
       throw Error('Invalid password.');
     }
+
+    return 'token123';
   }
 }

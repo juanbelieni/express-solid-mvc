@@ -9,14 +9,14 @@ export default class LoginController {
     const { email, password } = request.body;
 
     try {
-      await this.loginUseCase.login({
+      const token = await this.loginUseCase.login({
         email,
         password,
       });
 
       return response.status(200).json({
         message: 'User logged in.',
-        token: '123',
+        token,
       });
     } catch (err) {
       return response.status(400).json({
